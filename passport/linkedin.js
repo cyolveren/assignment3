@@ -7,9 +7,9 @@ var linkedinConfig = require('../linkedin.js');
 module.exports = function(passport) {
 
 passport.use(new LinkedInStrategy({
-    consumerKey: config.linkedin.clientID,
-    consumerSecret: config.linkedin.clientSecret,
-    callbackURL: config.linkedin.callbackURL 
+    consumerKey: linkedinConfig.linkedin.clientID,
+    consumerSecret: linkedinConfig.linkedin.clientSecret,
+    callbackURL: linkedinConfig.linkedin.callbackURL 
 },
 //Linkedin sends back the tokens and progile info
 function(access_token, refresh_token, profile, done) {
