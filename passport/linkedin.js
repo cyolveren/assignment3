@@ -1,4 +1,4 @@
-var LinkedInStrategy = require('passport-linkedin');
+var LinkedInStrategy = require('passport-linkedin').Strategy;
 var User = require('../models/User');
 var linkedinConfig = require('../linkedin.js');
 
@@ -6,7 +6,7 @@ var linkedinConfig = require('../linkedin.js');
 
 module.exports = function(passport) {
 
-passport.use(new LinkedInStrategy({
+passport.use('linkedin', new LinkedInStrategy({
     consumerKey: linkedinConfig.linkedin.clientID,
     consumerSecret: linkedinConfig.linkedin.clientSecret,
     callbackURL: linkedinConfig.linkedin.callbackURL 
